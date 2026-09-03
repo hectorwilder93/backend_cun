@@ -122,3 +122,12 @@ console.log("El producto con mayor Stock es "+ name_stock  + " con un Stock de: 
 console.log("Cantidad de productos por categoría:", conteoCategorias);
 
 
+
+export function findById(param, id){
+  for(let i=0; i< param.length; i++ ){
+    if(param[i].id === id){
+        return param[i];
+    }
+  }
+    return 'no hay datos'
+}
