@@ -49,7 +49,6 @@ const productos = [
         categoria: "Tecnología"
 }
 
-
 ];
 
 function gestionarProductos(productos) {
@@ -113,3 +112,5 @@ console.log(resultado.buscarProductoPorId(3));
 
 console.log("Cantidad de productos por categoría:"); 
 console.log(resultado.productosPorCategoria);
+
+module.exports = { productos, gestionarProductos };
