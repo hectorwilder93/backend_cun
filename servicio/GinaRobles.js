@@ -107,10 +107,17 @@ function contarCategorias(array) {
     }, {});
 }
 
-// --- PRUEBAS ---
-console.log("Costo total:", calcularCostoTotal(productos));
-console.log("Mayores a 100k:", obtenerProductosCaros(productos).map(p => p.nombre));
-console.log("Mayor stock:", obtenerProductoMayorStock(productos).nombre);
-console.log("Buscar id 3:", buscarProductoPorId(productos, 3));
-console.log("Tecnología:", obtenerTecnologicos(productos).length);
-console.log("Por categoria:", contarCategorias(productos));
+const productos = [
+  { id: 1, nombre: "Producto Gina 1", precio: 10000 },
+  { id: 2, nombre: "Producto Gina 2", precio: 15000 },
+  { id: 3, nombre: "Producto Gina 3", precio: 20000 },
+  { id: 4, nombre: "Producto Gina 4", precio: 25000 },
+  { id: 5, nombre: "Producto Gina 5", precio: 30000 },
+  { id: 6, nombre: "Producto Gina 6", precio: 35000 },
+  { id: 7, nombre: "Producto Gina 7", precio: 40000 },
+  { id: 8, nombre: "Producto Gina 8", precio: 45000 },
+  { id: 9, nombre: "Producto Gina 9", precio: 50000 },
+  { id: 10, nombre: "Producto Gina 10", precio: 55000 }
+];
+module.exports = { productos };
+
