@@ -1,3 +1,15 @@
+const logicaGet = (req, res) => {
+  res.json({ mensaje: "Respuesta desde logicaGet" });
+};
+
+const logicaPost = (req, res) => {
+  res.json({ mensaje: "Respuesta desde logicaPost", datos: req.body });
+};
+module.exports = {
+  logicaGet,
+  logicaPost,
+};
+
 /*Crea una función que reciba un array de objetos de productos y realice las siguientes operaciones:
 
 Obtener los productos cuyo precio sea mayor a $100.000.
@@ -70,7 +82,6 @@ const productosMayor100k = productos.filter((p) => p.precio > 100000);
 console.log("OPERACIÓN 1 - Productos con precio > $100.000:");
 console.log(productosMayor100k);
 
-
 /*Calcular el valor total del inventario (precio × stock).*/
 const valorTotalInventario = productos.reduce(
   (total, p) => total + p.precio * p.stock,
@@ -79,14 +90,12 @@ const valorTotalInventario = productos.reduce(
 console.log("OPERACIÓN 2 - Valor total del inventario:");
 console.log(valorTotalInventario);
 
-
 /*Encontrar el producto con mayor stock.*/
 const productoMayorStock = productos.reduce((max, p) =>
   p.stock > max.stock ? p : max,
 );
 console.log("OPERACIÓN 3 - Producto con mayor stock:");
 console.log(productoMayorStock);
-
 
 /*Obtener un nuevo array que contenga únicamente los productos con categoria === "Tecnología".*/
 const productosTecnologia = productos.filter(
@@ -95,12 +104,10 @@ const productosTecnologia = productos.filter(
 console.log("OPERACIÓN 4 - Productos de categoría 'Tecnología':");
 console.log(productosTecnologia);
 
-
 /*Buscar un producto por su id.*/
 const productoPorId = productos.find((p) => p.id === 5);
 console.log("OPERACIÓN 5 - Producto con id 5:");
 console.log(productoPorId);
-
 
 /*Generar un objeto con la cantidad de productos agrupados por categoría.*/
 const gruposPorCategoria = productos.reduce((acc, p) => {
@@ -110,4 +117,3 @@ const gruposPorCategoria = productos.reduce((acc, p) => {
 }, {});
 console.log("OPERACIÓN 6 - Cantidad de productos por categoría:");
 console.log(gruposPorCategoria);
-
