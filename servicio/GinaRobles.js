@@ -107,13 +107,17 @@ function contarCategorias(array) {
     }, {});
 }
 
+const productos = [
+  { id: 1, nombre: "Producto Gina 1", precio: 10000 },
+  { id: 2, nombre: "Producto Gina 2", precio: 15000 },
+  { id: 3, nombre: "Producto Gina 3", precio: 20000 },
+  { id: 4, nombre: "Producto Gina 4", precio: 25000 },
+  { id: 5, nombre: "Producto Gina 5", precio: 30000 },
+  { id: 6, nombre: "Producto Gina 6", precio: 35000 },
+  { id: 7, nombre: "Producto Gina 7", precio: 40000 },
+  { id: 8, nombre: "Producto Gina 8", precio: 45000 },
+  { id: 9, nombre: "Producto Gina 9", precio: 50000 },
+  { id: 10, nombre: "Producto Gina 10", precio: 55000 }
+];
+module.exports = { productos };
 
-module.exports = {
-  productos,
-  calcularCostoTotal,
-  obtenerProductosCaros,
-  obtenerProductoMayorStock,
-  buscarProductoPorId,
-  obtenerTecnologicos,
-  contarCategorias
-};

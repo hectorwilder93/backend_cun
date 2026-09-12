@@ -69,7 +69,7 @@ const productos = [
 const productosMayor100k = productos.filter((p) => p.precio > 100000);
 console.log("OPERACIÓN 1 - Productos con precio > $100.000:");
 console.log(productosMayor100k);
-console.log("----------------------------------------\n");
+
 
 /*Calcular el valor total del inventario (precio × stock).*/
 const valorTotalInventario = productos.reduce(
@@ -78,7 +78,7 @@ const valorTotalInventario = productos.reduce(
 );
 console.log("OPERACIÓN 2 - Valor total del inventario:");
 console.log(valorTotalInventario);
-console.log("----------------------------------------\n");
+
 
 /*Encontrar el producto con mayor stock.*/
 const productoMayorStock = productos.reduce((max, p) =>
@@ -86,7 +86,7 @@ const productoMayorStock = productos.reduce((max, p) =>
 );
 console.log("OPERACIÓN 3 - Producto con mayor stock:");
 console.log(productoMayorStock);
-console.log("----------------------------------------\n");
+
 
 /*Obtener un nuevo array que contenga únicamente los productos con categoria === "Tecnología".*/
 const productosTecnologia = productos.filter(
@@ -94,13 +94,13 @@ const productosTecnologia = productos.filter(
 );
 console.log("OPERACIÓN 4 - Productos de categoría 'Tecnología':");
 console.log(productosTecnologia);
-console.log("----------------------------------------\n");
+
 
 /*Buscar un producto por su id.*/
 const productoPorId = productos.find((p) => p.id === 5);
 console.log("OPERACIÓN 5 - Producto con id 5:");
 console.log(productoPorId);
-console.log("----------------------------------------\n");
+
 
 /*Generar un objeto con la cantidad de productos agrupados por categoría.*/
 const gruposPorCategoria = productos.reduce((acc, p) => {
@@ -110,4 +110,4 @@ const gruposPorCategoria = productos.reduce((acc, p) => {
 }, {});
 console.log("OPERACIÓN 6 - Cantidad de productos por categoría:");
 console.log(gruposPorCategoria);
-console.log("----------------------------------------\n");
+

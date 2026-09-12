@@ -4,9 +4,6 @@ const sumar= (a,b) => {a+b};
 console.log(sumar(5,10));
 
 
-// Cristianlugo.js 
-//arreglo ejercicio 
-
 let productos = [
     {
         id: 1,
@@ -65,7 +62,7 @@ let productos = [
         categoria: "Tecnología"
     }
 ];
-// costo tatal inventario 
+
 let costotal = 0; 
 
 
@@ -76,7 +73,6 @@ for (let i = 0; i < productos.length; i++) {
 
 console.log ("el precio total del inventario es:", costotal); 
 
-// producto con mayor stock 
 console.log("Los productos mayores a cien mil son:");
 
 for (let i = 0; i < productos.length; i++) {
@@ -86,21 +82,20 @@ for (let i = 0; i < productos.length; i++) {
     
 }
 
-// producto con mayor stock 
 let Productomayorstock = productos[0];
 for (let i = 0; i < productos.length; i++) {
     if (productos[i].stock > Productomayorstock.stock) {
-   Productomayorstock = productos[i];
+        Productomayorstock = productos[i];
     }
     
 }
 
- console.log("El producto con mayor stock es", Productomayorstock.nombre);
- console.log("Su stock total es:",Productomayorstock.stock);
-// identificando producto
- let buscarid = 3; 
+console.log("El producto con mayor stock es", Productomayorstock.nombre);
+console.log("Su stock total es:",Productomayorstock.stock);
 
- let identificador = productos.find(producto => producto.id===buscarid );
+let buscarid = 3; 
+
+let identificador = productos.find(producto => producto.id===buscarid );
 
 if (identificador) {
     console.log("Producto encontrado:", identificador.nombre);
@@ -109,7 +104,6 @@ if (identificador) {
     console.log("No se encontró ningún producto con el ID:", buscarid);
 }
 
-//nuevlo arreglo con los productos de tecnologia 
 
 let tecnologicos = []; 
 
@@ -122,8 +116,6 @@ for (let i = 0; i < productos.length; i++) {
 console.log(tecnologicos);
 
 
-
-//Objetos por categoria
 const cantidadPorCategoria = productos.reduce((acumulador, producto) => {
     const categoria = producto.categoria;
     acumulador[categoria] = (acumulador[categoria] || 0) + 1;
@@ -133,16 +125,6 @@ const cantidadPorCategoria = productos.reduce((acumulador, producto) => {
 console.log(cantidadPorCategoria);
 
 
-
-
-// funciones por ejercicio 
-
-// CristianLugo.js
-
-
-// 2. Funciones de utilidad
-
-// Calcula el costo total de todo el inventario
 function calcularCostoTotal(array) {
     let costoTotal = 0;
     for (let i = 0; i < array.length; i++) {
@@ -151,7 +133,6 @@ function calcularCostoTotal(array) {
     return costoTotal;
 }
 
-// Retorna los productos con precio mayor a un monto especificado (por defecto 100,000)
 function obtenerProductosCaros(array, limitePrecio = 100000) {
     let productosCaros = [];
     for (let i = 0; i < array.length; i++) {
@@ -162,7 +143,6 @@ function obtenerProductosCaros(array, limitePrecio = 100000) {
     return productosCaros;
 }
 
-// Encuentra y retorna el objeto producto con mayor cantidad de stock
 function obtenerProductoMayorStock(array) {
     if (array.length === 0) return null;
     let productoMayor = array[0];
@@ -174,12 +154,10 @@ function obtenerProductoMayorStock(array) {
     return productoMayor;
 }
 
-// Busca un producto específico por su id
 function buscarProductoPorId(array, id) {
     return array.find(producto => producto.id === id);
 }
 
-// Retorna un nuevo arreglo únicamente con los productos de Tecnología
 function obtenerTecnologicos(array) {
     let tecnologicos = [];
     for (let i = 0; i < array.length; i++) {
@@ -190,7 +168,6 @@ function obtenerTecnologicos(array) {
     return tecnologicos;
 }
 
-// Retorna un objeto con la cantidad de productos por categoría
 function contarCategorias(array) {
     return array.reduce((acumulador, producto) => {
         const categoria = producto.categoria;
@@ -199,7 +176,6 @@ function contarCategorias(array) {
     }, {});
 }
 
-// 3. Exportación agrupada de datos y funciones al final
 export {
     productos,
     calcularCostoTotal,
@@ -209,4 +185,3 @@ export {
     obtenerTecnologicos,
     contarCategorias
 };
-
