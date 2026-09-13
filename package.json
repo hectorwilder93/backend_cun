@@ -17,7 +17,7 @@
     "type": "git",
     "url": "git+https://github.com/hectorwilder93/backend_cun.git"
   },
-  "type": "commonjs",
+  "type": "module",
   "bugs": {
     "url": "https://github.com/hectorwilder93/backend_cun/issues"
   },
