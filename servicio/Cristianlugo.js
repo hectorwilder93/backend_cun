@@ -137,7 +137,7 @@ console.log(cantidadPorCategoria);
 
 // funciones por ejercicio 
 
-// CristianLugo.js
+// Cristianlugo.js
 
 
 // 2. Funciones de utilidad
