@@ -65,6 +65,8 @@ let productos = [
         categoria: "Tecnología"
     }
 ];
+
+//ejercicios con el For
 // costo tatal inventario 
 let costotal = 0; 
 
