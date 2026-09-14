@@ -68,66 +68,80 @@ Obtener un nuevo array que contenga únicamente los productos con categoria === 
 Buscar un producto por su id.
 Generar un objeto con la cantidad de productos agrupados por categoría. */
 
-let resultado = 0;
-var stock_mayor= 0; 
-let name_stock = "";
-const Tecnologia = []; 
-const conteoCategorias = {};
-    
-console.log("Productos con valor mayor a $100.000")
 
-for(x=0; x<productos.length; x++){
-
-    // primer punto
-    if(productos[x].precio>100000){
-        console.log("Nombre: "+productos[x].nombre+" Valor: "+productos[x].precio);
-    };
-
-    // Segundo punto
-    resultado += (productos[x].precio * productos[x].stock);
-
-    // tercer punto
-    if(stock_mayor < productos[x].stock){
-        stock_mayor= productos[x].stock;
-        name_stock = productos[x].nombre;
+// Punto 1
+function obtenerMayoresA100k(param) {
+    const mayores = [];
+    for (let x = 0; x < param.length; x++) {
+        if (param[x].precio > 100000) {
+            mayores.push(param[x]);
+        }
     }
-
-    // Cuarto punto
-    if(productos[x].categoria  === "Tecnología"){ 
-        Tecnologia.push(productos[x]);
-    }
-
-
-    // Quinto punto
-
-
-    // Sexto punto
-    
-    let cat = productos[x].categoria; 
-    
-    if (conteoCategorias[cat]) {
-    
-    conteoCategorias[cat]++;
-    } else {
-    
-    conteoCategorias[cat] = 1;
-    }
-    
-
+    return mayores;
 }
 
-
-console.log("El Valor total del inventa es: " + resultado);
-console.log("El producto con mayor Stock es "+ name_stock  + " con un Stock de: " + stock_mayor);
-console.log("Cantidad de productos por categoría:", conteoCategorias);
-
-
-
-export function findById(param, id){
-  for(let i=0; i< param.length; i++ ){
-    if(param[i].id === id){
-        return param[i];
+// Punto 2
+function calcularValorTotal(param) {
+    let resultado = 0;
+    for (let x = 0; x < param.length; x++) {
+        resultado += (param[x].precio * param[x].stock);
     }
-  }
-    return 'no hay datos'
+    return { valorTotal: resultado }; // Retornamos un objeto para que la API responda en formato JSON
 }
+
+// Punto 3
+function obtenerMayorStock(param) {
+    let stock_mayor = 0;
+    let producto_mayor = null;
+    for (let x = 0; x < param.length; x++) {
+        if (stock_mayor < param[x].stock) {
+            stock_mayor = param[x].stock;
+            producto_mayor = param[x]; // Guardamos el objeto completo del producto
+        }
+    }
+    return producto_mayor;
+}
+
+// Punto 4
+function filtrarTecnologia(param) {
+    const tecnologia = [];
+    for (let x = 0; x < param.length; x++) {
+        if (param[x].categoria === "Tecnología") {
+            tecnologia.push(param[x]);
+        }
+    }
+    return tecnologia;
+}
+
+// Punto 5
+function findById(param, id) {
+    for (let i = 0; i < param.length; i++) {
+        if (param[i].id === id) {
+            return param[i];
+        }
+    }
+    return { mensaje: 'no hay datos' }; // Cambiado a JSON para Express
+}
+
+// Punto 6
+function agruparPorCategoria(param) {
+    const conteoCategorias = {};
+    for (let x = 0; x < param.length; x++) {
+        let cat = param[x].categoria;
+        if (conteoCategorias[cat]) {
+            conteoCategorias[cat]++;
+        } else {
+            conteoCategorias[cat] = 1;
+        }
+    }
+    return conteoCategorias;
+}
+
+export {
+    obtenerMayoresA100k,
+    calcularValorTotal,
+    obtenerMayorStock,
+    filtrarTecnologia,
+    findById,
+    agruparPorCategoria
+};
